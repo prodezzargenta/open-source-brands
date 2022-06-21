@@ -1,0 +1,45 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+# This GPG-signed message exists to confirm the SHA256 sums of the document.
+#
+# Please verify the signature against the key for Prodezzargenta in the 
+# source code repository (/utils/pubkeys/prodezzargenta.asc)
+# $ gpg --import prodezzargenta.asc
+# $ gpg --verify hashes.txt
+#
+# The output should contain:
+#  gpg: Good signature from "Prodezzargenta <prodezzargenta@gmail.com>"
+#
+# To calculate the SHA256 sum of a file on Linux use
+# $ sha256sum filename
+#
+# Main TeX document:
+e7d8fef948e4401ed746c5544b66c3a00e09445a0dabf74fcf3177fec7f08eb7 osb.tex
+#
+# Bibliography:
+243416b6607ebfab667be93b871826ffca67478ef8fb0bf2f35433dd8e02abc7 osbbiblio.bib
+#
+# PDF output
+cce2ab4698c42186a73d92b52d3e2d57e2e1f0a0a2fd7b0276a71a3c315fdbac osb.pdf
+# Media:
+2c00117efdbd3e0d53cbf0ed967b7b9df4a8db2bb5abe04eb9b7a117b4f86a57 media/flow-diag-en.tex
+d21b979d74af6ef8e0ee17b2f2e2fd7ef073e264cf5d47c7b1a7853ce910ecd9 media/qr-code-en.pdf
+2ff1b4c6c3ba47c2ef4298d46a7a768bcf6ca250c3a7cc08016547aa801aa322 media/qr-code2-en.pdf
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEC+AyBYt9GTpzc+BXmnO7H4lyPIIFAmKyRSEACgkQmnO7H4ly
+PIJHhg/+MP34PL8bvuXfus5ujpxJ/xxHjBRRJeXncSGxTC/xEu7Vu8hyXETIgbrs
+uHKWAWWKToBcpwXBKLZPH8myfJz49oSOXGhYkVyEbFxGafiM3ZHn1O/Jh9SF70mH
+U7b+PsqEa9JLyGqGHCBEdQHKwcwvLvw2gnewFH4yj4OvWKeH88nn3tYXjAlfcLlx
+5JuT8q2uyxqhSml78iQ8fgr6limmINDwO2SGhIa0ojzLxTtcViPvgq+umjjyGsoB
+b4DnJ8/XguzgzpfQQxCxjOxzKKb3iz00n6w4wR5DRH5t3s7cAWQI4Lm6DgWBoNi9
+Isk1PaWw/FQQ0PyED8Dy4oyvex4wBqk/7FzT12ijnW1BbNzQOyt6Ml5+y6GTTdkO
+YvD+2DCjU+c+LOx0I5pO0qruJ0+S0wsspTYlY1YTTfX9QmZX6c3OlssCCXr5v9wL
+t9SayuQcCwucaxmRJDwDWDSayARCY1i5+d5LUyHqNdlvlzS64w6MSbk/y1T8jLYU
+iBdUcsIQjzZhouNwCH+eGKsTdFvpboja8iCOC6Cno/uhOIrTGDBzu38hOwIpgSYy
+S+tnwCHvqdO4FkpcFMKKfPG1AjVweDwTUgYGQJLCpa2RPhaCCbazXzTGwGAGtyKS
+LYUO8pnuARo5C/1H8TrKgWHBXBFjDFjRxVCvFOnbAbdMZN6ctd0=
+=taLc
+-----END PGP SIGNATURE-----
+
