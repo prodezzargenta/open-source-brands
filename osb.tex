@@ -7,7 +7,8 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric,arrows,positioning}
 \author{Prodezzargenta}
-\title{Criptomonedas, y marcas de código abierto}
+\title{Criptomonedas, y marcas de código abierto \\
+		v-1.1}
 \date{\today}
 \begin{document}
 
@@ -211,15 +212,15 @@ Un caso que sí compete a este artículo es aquel en donde un actor malicioso, c
 
 ¿Cómo el cliente podría asegurarse que el producto que desea comprar es «auténtico» y no una falsificación? En un principio, podría considerarse la creación de una empresa que ofrezca certificaciones de calidad del producto. Esto es: una empresa \textit{autónoma} que verifica tanto el proceso de fabricación del producto como el producto final, y otorgue una certificación de calidad al fabricante y al producto. Por otro lado, podría ser el mismo inventor quien supervise el proceso de fabricación y el producto final, para ser la misma persona quien otorgue el certificación de calidad.
 
-En estos dos paradigmas, aparecería un nuevo problema (que no es para nada «nuevo»): se debe recurrir a un \textit{tercero de confianza} para determinar la autenticidad del producto. Aquí es donde aparece, una vez más, la tecnología \textit{blockchain} y el desarrollo teórico de Satoshi Nakamoto en su artículo \textit{Bitcoin: A Peer-to-Peer Electronic Cash System}:
+Sin embargo, en estos dos casos, aparecería un nuevo problema (que no es para nada «nuevo»): se debe recurrir a un \textit{tercero de confianza} para determinar la autenticidad del producto. Aquí es donde aparece, una vez más, la tecnología \textit{blockchain} y el desarrollo teórico de Satoshi Nakamoto en su artículo \textit{Bitcoin: A Peer-to-Peer Electronic Cash System}:
 
 \begin{quotation}
 Lo que se necesita es un sistema de pagos electrónicos basado en pruebas criptográficas en vez de confianza, permitiéndole a dos partes interesadas en realizar transacciones directamente sin la necesidad de un tercero confiable. Las transacciones que son computacionalmente poco factibles de revertir protegerían a los vendedores de fraude, y mecanismos de depósitos de fideicomisos de rutina podrían ser fácilmente implementados para proteger a los compradores. \cite[pág.~1]{bitcoin}
 \end{quotation}
 
-Por lo tanto, se podría utilizar una \textit{blockchain} (ya sea una nueva \textit{blockchain}, o utilizando la de la misma criptomoneda) para emplear un mecanismo de autenticación de los productos, y dejar asentado la certificación del producto. Esta certificación, por dar un ejemplo, podría ser el comprobante de pago del fabricante con la empresa o inventor que provee dicha certificación, enlazado con algún código de verificación del producto finalizado. Así, cuando el cliente desee verificar por sus propios medios si el producto nuevo que comprará es «auténtico» podrá hacerlo mediante un código QR, cuya certificación del producto, y el comprobante de pago del fabricante a la empresa, esté asentada en la cadena de bloques.\footnote{Esto es un simple ejemplo que debe ser tomado en cuenta para ofrecer una forma muy sencilla de verificación de autenticidad para el usuario. Así como el envío o recibo de criptomonedas ha evolucionado de copiar una dirección, en formato texto, a mostrar dicha dirección en formato QR para que el usuario pueda, sencillamente, realizar la transacción, aquí se podría crear algo similar.
+En este paradigma, la «certificación» es diferente al de la vida real, y tiene que ver con este tema fundamental: todos los procesos de trabajo están a libre disposición de los usuarios (y este proceso estará firmado digitalmente por el creador, para garantizar la autenticidad de todos ellos). Por lo tanto, no habría necesidad de solicitar un tercero de confianza para que garantice que los procesos de trabajo sean los que corresponden. Bajo el paradigma actual, las patentes están ocultas al escrutinio público; y esto hace que sí se necesite un tercero de confianza para certifica que se utilizan materias primas y procesos de trabajo adecuados para la fabricación de un producto. En la propuesta de este artículo, el inventor no debe por qué estar pendiente si cada uno de los fabricantes respetan los procesos estipulados, ni esperar que haya un tercero de confianza para garantizar que los procesos de trabajo sean legítimos. En definitiva, \textit{todos} los agentes involucrados son los certificadores de calidad del producto: desde el fabricante (que desea ganar dinero al vender su producto fabricado), hasta el vendedor (que desea ganar dinero al vender el producto desde la fábrica hasta el cliente), y el cliente (que desea comprar dicho producto). Y todos ellos, ante la duda, podrán comprobar por sí mismos si el producto es \textit{legítimo} o no en base a los procesos determinados por el inventor.
 
-En la sección \textit{Comprobación} se incluirá una posible forma de certificación (con sus ventajas y desventajas); pero esto no implica que se descarte cualquier surgimiento de nuevas aplicaciones, métodos o tecnologías de verificación de calidad, dada la misma interacción entre los agentes económicos que están interesados en comprar un producto «confiable».}.
+Dada la noción de un \textit{sistema sin confianza}, en la sección \textit{Comprobación} se incluirá una posible forma de certificación (con sus ventajas y desventajas); pero esto no implica que se descarte cualquier surgimiento de nuevas aplicaciones, métodos o tecnologías de verificación de calidad, dada la misma interacción entre los agentes económicos que están interesados en comprar un producto «confiable».
 
 \subsubsection{Incentivo económico}
 Este punto quizás sea el más controversial y la piedra angular de todo este modelo de negocios. Hasta ahora, se ha dado por sentado que aquellos que deseen fabricar los bienes de la marca de código libre estarán dispuestos a pagar voluntariamente una comisión al inventor por cada venta. Pero esto implica que el fabricante tenga que realizar la acción de vender el producto y \textit{elegir} no pagarle al inventor (y al ser una marca de código libre, no existe ninguna privación por parte del fabricante en realizar esto). Esto genera una situación que no es económicamente favorable para el inventor\footnote{A menos, claro, que ofrezca una marca de código libre y explicite que no desea obtener ninguna ganancia al respecto.}.
@@ -257,17 +258,15 @@ Nótese que MoneroOcean y P2Pool no cobran comisiones a los usuarios. Aún así,
 Aparte de la competencia que existe entre estas \textit{pools}, ésto puede tomarse como ejemplo para el modelo de negocios. El vendedor, cuando ofrece su producto al mercado, podría dar un código QR para que el cliente pueda escanear dicho código y pagarlo; con la diferencia que, dentro del mismo código QR, el cliente, al realizar la transferencia, esté enviando su dinero a dos direcciones diferentes. Por ejemplo, dada una marca de licores, el vendedor podría etiquetar la botella con el código QR, para que el cliente, con su aplicación correspondiente, pueda transferir su dinero en criptomonedas de su billetera a dos cuentas a la vez. Si la marca de licores pide un 1\% de comisión por cada venta, y la empresa certificadora de calidad, un 0,5\% por cada venta, entonces, contablemente hablando, se vería de la siguiente manera\footnote{Vale la pena aclarar que aquí no se cuenta la comisión por la transacción asentada en la \textit{blockchain}.}:
 
 \begin{center}
-\begin{tabular}{|l|r|r|}
+\begin{tabular}{|l|r|r|r|}
 \hline 
-\textbf{Agente} & \textbf{Saldo} & \textbf{Porc.} \\ 
+\textbf{Agente} & \textbf{Debe} & \textbf{Haber} & \textbf{Porc.} \\ 
 \hline 
-Comprador & -25,000 mXMR & 100,00 \% \\ 
+Comprador & — & 25,000 mXMR & 100,00 \% \\ 
 \hline 
-Vendedor & 24,625 mXMR & 98,50 \% \\
+Vendedor & 24,750 mXMR & — & 99,00 \% \\
 \hline 
-Certificador & 0,250 mXMR & 1,00 \% \\ 
-\hline 
-Inventor & 0,125 mXMR & 0,50 \% \\ 
+Inventor & 0,250 mXMR & — & 1,00 \% \\ 
 \hline 
 \end{tabular} 
 \end{center}
@@ -275,24 +274,24 @@ Inventor & 0,125 mXMR & 0,50 \% \\
 Si el vendedor ofreciese el código QR al comprador para realizar la transacción, éste se vería así:
 
 \begin{center}
-\includegraphics[width=0.5\textwidth]{media/qr-code2.pdf}
+\includegraphics[width=0.5\textwidth]{media/qr-code-es.pdf}
 \end{center}
 
 Con sólo una sola imagen, el código QR mostrará:
 
 \begin{itemize}
+\item El monto del producto.
 \item La dirección del vendedor, con el monto correspondiente.
 \item La dirección del inventor, con el monto correspondiente.
-\item La dirección del certificador, con el monto correspondiente.
 \item El detalle de la compra.
 \end{itemize}
 
-¿Que pasaría si el vendedor, maliciosamente, engañase al comprador al dar tres direcciones diferentes, pero que todas ellas corresponden al mismo vendedor? Para reducir este grado de confianza y evitar este acto, tanto el inventor como el certificador deberán ofrecer públicamente su dirección. De esta forma, el comprador, mediante una comparación visual o a través de una simple aplicación, podrá verificar que las tres direcciones corresponden al vendedor, al inventor y al certificador, respectivamente.
+¿Que pasaría si el vendedor, maliciosamente, engañase al comprador al dar tres direcciones diferentes, pero que todas ellas corresponden al mismo vendedor? Para reducir este grado de confianza y evitar este acto, tanto el inventor como el vendedor deberan ofrecer públicamente sus direcciones en un archivo \texttt{.asc}, firmados con sus respectivas claves privadas GPG, y utilizar un protocolo para verificar que las direcciones incluida sen el código QR correspondan con las partes involucradas. De esta forma, el comprador, mediante una comparación visual o a través de una simple aplicación, podrá verificar que las dos direcciones corresponden al vendedor y al inventor.
 
-Esto implica que no solamente el vendedor ofrecerá su producto con el código QR incluido, sino que el comprador, para no ser engañado, podrá verificar que las direcciones (que están contenidas dentro del código) puedan ser comprobadas al obtener la dirección de cada agente económico en la transacción por su cuenta. Siguiendo con el ejemplo anterior, ahora con direcciones reales y con órdenes creadas a partir de la opción \textit{Payment request} en el programa Monero GUI (aunque con una modificación en la sintaxis), el código QR podría verse de la siguiente manera:
+Siguiendo con el ejemplo anterior, ahora con direcciones reales y con órdenes creadas a partir de la opción \textit{Payment request} en el programa Monero GUI (aunque con una modificación en la sintaxis), el código QR podría verse de la siguiente manera:
 
 \begin{center}
-\includegraphics[width=0.9\textwidth]{media/qr-code3.pdf}
+\includegraphics[width=0.75\textwidth]{media/qr-code2-es.pdf}
 \end{center}
 
 Este código se desglosa de la siguiente manera:
@@ -301,23 +300,16 @@ Este código se desglosa de la siguiente manera:
 \item Datos del \textit{vendedor}:
 	\begin{itemize}
 	\item \textbf{Dirección de Monero:} 8BB dgnA ckd2 DWfX qHcc 2466 v19d VeWv hgAt jSm1 hZGP xe6C BkPg Dxqa BLbr D9NL K8re WLFf oUtd pg18 rzkT DC2i BJMe rKDv
-	\item \textbf{Cantidad:} 0.024625000000
+	\item \textbf{Cantidad:} 0.024750000000
 	\item \textbf{Nombre:} Vendedor
 	\item \textbf{Descripción:} Botella de licor
 	\end{itemize}
-\item Datos del \textit{Inventor}:
+\item Datos del \textit{inventor}:
 	\begin{itemize}
 	\item \textbf{Dirección de Monero:} 887 UEV7 9zZT KeKb tGjT 2GUe 6P6H aFLn DF52 KibH PL2C yZUp isgA 2EyN anJh LXRf oJW6 FNhX Q7sd h9SE K8YX u7ZX 8JKL YADh
 	\item \textbf{Cantidad:} 0.000250000000
 	\item \textbf{Nombre:} Inventor
-	\item \textbf{Descripción:} Limonero
-	\end{itemize}
-\item Datos del \textit{Certificador}:
-	\begin{itemize}
-	\item \textbf{Dirección de Monero:} 84u hYRq UPTY 3FeV fjHX JVci 8eu7 b2RA Ry7d cjpf 68ff yMoJ QFq3 Log3 PQ6H hgCx gz86 DTeq ATDQ 9D1b zJ4M z1dV R3oz 1Gjv 
-	\item \textbf{Cantidad:} 0.000125000000
-	\item \textbf{Nombre:} Certificador
-	\item \textbf{Descripción:} Certificación aprobada
+	\item \textbf{Descripción:} Li'monero
 	\end{itemize}
 \end{itemize}
 
@@ -325,21 +317,20 @@ Entonces, el cliente podrá tener los siguientes parámetros:
 
 \begin{itemize}
 \item La suma total de las tres transacciones da como resultado 0.025 XMR (o 25 mXMR), precio que coincide con el precio de venta del producto, por lo que podrá asegurarse que el precio está bien.
-\item El desglose de los 25 mXMR en 24,625 mXMR (98,5\%) para el vendedor, 0,250 mXMR (1\%) para el inventor, y 0,125 mXMR (0,5\%) para el certificador, que coinciden con las comisiones propuestas por la marca de código abierto y la empresa certificadora, respectivamente.
-\item Mediante una comprobación de las direcciones, podrá comprobar que las direcciones sean \textit{legítimas} (y esto podrá ser únicamente comprobable si los tres recipientes de XMR han dado públicamente su dirección).
-\item Podrá ver el nombre de la dirección y la descripción a la que corrsesponde el monto en la transacción.
+\item El desglose de los 25 mXMR en 24,75 mXMR (99\%) para el vendedor y 0,250 mXMR (1\%) para el inventor, ambos porcentajes coincidentes con las comisiones propuestas por la marca de código abierto y el vendedor, respectivamente.
+\item Mediante una comprobación con las claves públicas GPG, podrá comprobar que las direcciones son \textit{legítimas} (y esto podrá ser únicamente comprobable si los dos recipientes de XMR han dado públicamente su dirección, firmados con sus claves privadas).
+\item Podrá ver el nombre de la dirección y la descripción a la que corresponde el monto en la transacción.
 \end{itemize}
 
-De esta manera, el comprador podrá hacerlo rápidamente (ya sea desde la computadora o desde cualquier dispositivo móvil), sin la necesidad de realizar demasiados pasos para su comprobación. Además, esto mismo podrá realizarlo el certificador y el inventor. Esta transacción será \textit{válida} siempre y cuando la criptomoneda utilizada tenga la posibilidad de hacer un \textit{pago múltiple} a varias direcciones en una sola vez (o que haya una implementación de terceros para hacerlo). De lo contrario, los pasos extra que deberá hacer el cliente desincentivará su uso.
+De esta manera, el comprador podrá hacerlo rápidamente (ya sea desde la computadora o desde cualquier dispositivo móvil), sin la necesidad de realizar demasiados pasos para su comprobación. Además, esto mismo podrá realizarlo el inventor.
 
 En resumen, este ejemplo contiene las siguientes ventajas:
 
 \begin{itemize}
-\item El comprador tendrá la facilidad de pagar por el producto, sin la necesidad de tener que realizar el pago correspondiente a tres agentes económicos diferentes por separado: lo hará, simplemente, con un solo pago.
-\item El vendedor tendrá un incentivo económico, pues obtendrá una gran suma de dinero por cada venta (en este ejemplo, un 98,5\%).
+\item El comprador tendrá la facilidad de pagar por el producto, sin la necesidad de tener que realizar el pago correspondiente a dos agentes económicos diferentes por separado: lo hará, simplemente, con un solo pago.
+\item El vendedor tendrá un incentivo económico, pues obtendrá una gran suma de dinero por cada venta (en este ejemplo, un 99 \%).
 \item El inventor podrá ganar una pequeña suma de dinero de forma \textit{pasiva} con cada venta, al ofrecer su idea al mercado. Esto incentivará a competir en el mercado para que más personas puedan fabricar su producto; y obtener, así, mayores ingresos pasivos.
-\item El certificador podrá ganar dinero al haber constatado que la materia prima y los procesos de trabajo corresponden a lo que la marca de código abierto establece. Y de ofrecer esta homologación, el cliente podrá «asegurarse» que estará comprando un producto \textit{legítimo}.
-\item Todos los agentes económicos podrán verificar, mediante el código QR, que las direcciones con su correspondiente comisión sean \textit{fidedignas}. Caso contrario, alguno de ellos podrá demandar a la otra parte el cumplimiento del acuerdo; o, simplemente, el producto no se venderá pues no cumple con el estándar de venta.
+\item Todos los agentes económicos podrán verificar, a través del código QR, que las direcciones con su correspondiente comisión sean \textit{fidedignas} en base a las claves GPG proporcionadas. Caso contrario, alguno de ellos podrá demandar a la otra parte el cumplimiento del acuerdo; o, simplemente, el producto no se venderá pues no cumple con el estándar de venta.
 \end{itemize}
 
 \section{Comprobación}
@@ -357,22 +348,33 @@ Esta práctica, por lo tanto, puede realizarse fácilmente, y no dependerá de n
 
 ¿Cómo se puede, entonces, expandir esta idea en la compra de bienes tangibles? La utilización del algoritmo SHA-256 en los archivos existe para comprobar que el \textit{hash} del archivo coincida con lo que la organización o la persona muestra públicamente. Sin embargo, como esto puede estar sujeto a un \textit{hacking} (es decir, un \textit{hacker} puede interceptar el sitio de internet donde se almacena este hash, o la comunicación entre el cliente y el servidor) la seguridad debe ser aún más fuerte. Dado que se ha propuesto que las diferentes partes involucradas en la transacción deban compartir la dirección de su monedero, cualquier actor malicioso podría interceptar esta comunicación y «engañar» al cliente. Y al no existir un tercero de confianza, si el cliente envía sus fondos a una cuenta equivocada, éste perderá dichos fondos de forma irreversible. En resumen: una situación en donde las partes involucradas provean, en texto plano\footnote{Es decir, un texto sin ningún tipo de encriptación.}, no es condición suficiente como para \textit{asegurarse} que la dirección provista sea legítima. Es aquí donde aparece el protocolo GPG.
 
-Dado que no existe un tercero de confianza para mediar las transacciones entre las personas, todas las partes involucradas podrían cifrar su dirección de su monedero mediante el protocolo GPG. Así, todas ellas podrán compartir públicamente su clave pública; y las personas que deseen realizar la transacción se asegurarán que la dirección corresponde con la persona u organización involucrada. Esto, quizás, representaría una «desventaja» pues las personas, al comprar por primera vez, deberá tomarse el tiempo de buscar la firma GPG de la otra parte. No obstante, esto es simplemente otro paso de seguridad más que uno debe realizar; pero que no representa un enorme contratiempo. Es más, una vez registrada la llave pública, este paso no será necesario realizarlo de nuevo.
+Dado que no existe un tercero de confianza para mediar las transacciones entre las personas, todas las partes involucradas podrían publicar su dirección de su monedero mediante el protocolo GPG. Así, todas ellas podrán compartir públicamente su clave pública; y las personas que deseen realizar la transacción se asegurarán que la dirección corresponde con la persona u organización involucrada. Esto, quizás, representaría una «desventaja» pues las personas, al comprar por primera vez, deberá tomarse el tiempo de buscar la firma GPG de la otra parte. No obstante, esto representará otro paso de seguridad más; pero que no representa un enorme contratiempo. Es más, una vez registrada la llave pública en el dispositivo digital, este paso no será necesario realizarlo de nuevo.
 
-Este protocolo se debería realizar en el momento \textit{anterior} del pago. Mediante una aplicación para un dispositivo móvil, la lectura del código QR debería devolver las direcciones encriptadas para que las llaves públicas guardadas verifiquen la autenticidad de las direcciones. Si todo coincide, se podrá habilitar la opción de pago.
+Claro está que este procedimiento deberá realizarse en el momento \textit{anterior} del pago. A través de la aplicación para transferir criptomonedas, el programa deberá tener, primero, las llaves públicas GPG de todas las partes involucradas (vendedor, inventor, etcétera). Luego, el programa deberá verificar que el archivo \texttt{.asc} que contiene la dirección firmada de una de las partes, coincide con la llave pública que ha proporcionado. Si todo esto es correcto, aquí ya se podrá habilitar la opción de pago.
 
-Además, se puede usar el protocolo GPG para especificar el porcentaje de comisión correspondiente a cada una de las partes. Si mediante una simple cuenta matemática, por ejemplo, la comisión para el inventor es del 0,1\%, cuando la marca públicamente especifíca que es del 1\%, la operación será rechazada. El cliente, por lo tanto, actuaría como mediador al ver que los términos entre el vendedor y la marca no coinciden (situación por la cual el cliente podría sospechar de la autenticidad del producto y, por ende, del vendedor). Así, se elimina un grado más de confianza entre el vendedor y el inventor, al ser el cliente un actor \textit{pasivo} de mediación.
+Además, se podría usar el protocolo GPG para especificar el porcentaje de comisión correspondiente a cada una de las partes. Si mediante una simple cuenta matemática, por ejemplo, la comisión para el inventor es del 0,1\%, cuando la marca públicamente establece que es del 1\%, la operación será rechazada. El cliente, por lo tanto, actuaría como mediador al ver que los términos entre el vendedor y la marca no coinciden (situación por la cual el cliente podría sospechar de la autenticidad del producto y, por ende, del vendedor). Así, se elimina un grado más de confianza entre el vendedor y el inventor, al ser el cliente un actor \textit{pasivo} de mediación.
 
-Al final de este artículo se anexará el diagrama de flujo \textit{básico} de esta propuesta.
+Al final de este artículo se anexará el diagrama de flujo \textit{básico} de esta propuesta; como también se añadirá a la carpeta de la cuenta de GitHub la clave pública en formato \texttt{.asc} y un archivo de texto con la comprobación \textit{hash} de este documento, con la firma correspondiente, para que el lector pueda verificar la autenticidad de este documento.
+
+\subsection{Procedimiento}
+Para aquel lector que no sabe comprobar una clave GPG, será necesario tener un programa que pueda descifrar y verificar las firmas GPG. El programa más conocido es \textit{Kleopatra} (aunque también existen otras alternativas como \textit{GPA} en Linux), y es un gestor de claves GPG. Por lo tanto, el usuario si quiere comprobar la autenticidad de algún mensaje, como se ha dicho, deberá tener la clave pública de una de las partes. Así, el archivo de texto firmado que fue proporcionado por una de las partes podrá ser fácilmente verificado. Simplemente, se deberá seguir los siguientes pasos:
+
+\begin{itemize}
+\item Importar la clave pública al programa correspondiente.
+\item Seleccionar el archivo de texto que contiene el mensaje firmado.
+\item Verificar que la firma corresponde con la clave pública importada.
+\end{itemize}
+
+De ser inválida la firma (es decir, no se reconoce de quién es la firma) el archivo de texto estará adulterado.
 
 \section{Ramificaciones}
 El incentivo para crear más emprendimientos para ofrecer bienes y servicios al mercado paralelo, al demandar materia prima y/u otros servicios, provocará una oportunidad de mercado local para que \textit{otros} emprendimientos surjan para suplir dicha demanda. Por ejemplo, en el caso de una marca de licores, la demanda por las materias primas (tales como las botellas de vidrio, la bebida blanca, y la fruta) permitirá la oportunidad para que surjan en el mercado fabricantes de botella de vidrios, fabricantes de bebida blanca, y productores agropecuarios que germinen y cosechen tales frutas. A su vez, éstos demandarán insumos para crear sus productos: fabricantes de botella de vidrios necesitarán vidrio (su materia prima), pero también hornos y combustibles; los fabricantes de bebida blanca necesitarán de su materia prima, como también de insumos para su fermentación y almacenaje; los productores agropecuarios necesitarán de agua, agroquímicos (si su forma de producción no es «libre de agroquímicos»), fertilizantes (químicos o naturales), y máquinas agropecuarias; etcétera.
 
-Se estima que, en un principio, habrá muy pocos emprendimientos (y, en menor medida, marcas de código abierto) que tendrán que lidiar con la tasa de cambio «volátil» de las criptomonedas, el poco margen de ganancias por las ventas, y la incomodidad de lidiar contablemente con dos tipos de monedas diferentes para la obtención de materia prima. Ante esto, la respuesta estará en la decisión de cada agente económico en tomar el riesgo de emprender o no.
+Se estima que, en un principio, habrá muy pocos emprendimientos (y, en menor medida, marcas de código abierto) que tendrán que lidiar con la tasa de cambio «volátil» de las criptomonedas\footnote{De nuevo, por la concepción extendida de ver las criptomonedas como un activo financiero para hacer \textit{forex trading}, en vez de ser utilizado como \textit{dinero par-a-par}.}, el poco margen de ganancias por las ventas, y la incomodidad de lidiar contablemente con dos tipos de monedas diferentes para la obtención de materia prima. Ante esto, la respuesta estará en la decisión de cada agente económico en tomar el riesgo de emprender o no.
 
-Sin embargo, vale la pena destacar que estas marcas podrían ser mejores aplicadas en países con grandes inestabilidades económicas, debido a que, generalmente, esto viene de la mano de la poca flexibilización de monedas extranjeras y una rápida depreciación de la moneda local. Las criptomonedas, por lo tanto, supondrán un bien de intercambio de «menor» volatilidad en comparación con el dinero \textit{fiat} local; ya que la tendencia a largo plazo del dinero estatal tiende a depreciarse, mientras que la tendencia a largo plazo de las criptomonedas en general, tienden a apreciarse\footnote{En el 2009, Bitcoin no valía absolutamente nada; pero hoy, en el 2020, es la criptomoneda de mayor cotización de todo el mercado. Lo mismo sucede con las otras criptomonedas en sus inicios, con respecto a ahora.}.
+No obstante, vale la pena destacar que estas marcas podrían ser mejores aplicadas en países con grandes inestabilidades económicas, debido a que, generalmente, esto viene de la mano de la poca flexibilización de monedas extranjeras y una rápida depreciación de la moneda local. Las criptomonedas, por lo tanto, supondrán un bien de intercambio de «menor» volatilidad en comparación con el dinero \textit{fiat} local; ya que la tendencia a largo plazo del dinero estatal tiende a depreciarse, mientras que la tendencia a largo plazo de las criptomonedas en general, tienden a apreciarse\footnote{En el 2009, Bitcoin no valía absolutamente nada; pero hoy, en el 2020, es la criptomoneda de mayor cotización de todo el mercado. Lo mismo sucede con las otras criptomonedas en sus inicios, con respecto a ahora.}.
 
-Retomando el ejemplo de la marca de código abierto que ofrece el licor, sí: al principio podría haber un margen de ganancia bajo o nulo debido a la compra de botellas de vidrio, sus tapas correspondientes, y la impresión de las etiquetas para las marcas. Pero aquí puede darse una «vuelta de tuerca»: en un comienzo, las botellas podrían ser recicladas de otras botellas vacías que las personas hayan arrojado a la basura. Se puede remover la etiqueta y usar el envase, correctamente esterilizado, para rellenarlo, taparlo y venderlo al público. Uno, tal vez, podría pensar en la idea que no se ofrecería una buena imagen de la marca, al utilizar botellas de otras marcas; pero esto podría ser resuelto, por ejemplo, mediante una campaña de marketing en el que expone a la marca como una empresa que no reutiliza botellas y no produce una huella de carbón.
+Retomando el ejemplo de la marca de código abierto que ofrece el licor, sí: al principio podría haber un margen de ganancia bajo o nulo debido a la compra de botellas de vidrio, sus tapas correspondientes, y la impresión de las etiquetas para las marcas. Pero aquí puede darse una «vuelta de tuerca»: en un comienzo, las botellas podrían ser recicladas de otras botellas vacías que las personas hayan arrojado a la basura. Se puede remover la etiqueta y usar el envase, correctamente esterilizado, para rellenarlo, taparlo y venderlo al público.
 
 El hecho de recolectar estas mismas botellas vacías, separándolas en sus diferentes tonalidades, podría dar lugar a la creación de una fábrica de botellas de vidrio, cuya materia prima es, justamente, las botellas arrojadas a la basura. Dado que el vidrio puede ser reutilizado, esta fábrica de botellas se ahorraría en el pago de materia prima en dinero \textit{fiat} para, únicamente, obtenerlo de la recolección de la basura. En resumen: debido a la demanda de botellas de vidrio valuado en criptomoneda, una fábrica de botellas de vidrio podría suplir esto, al obtener su materia prima recolectada de la basura.
 
@@ -384,14 +386,14 @@ Se podría continuar con los ejemplos; pero como comentario final, basta con dec
 \subsection{Local}
 Otro factor positivo de las \textit{marcas de código abierto} es que permitirían una circulación mayor de las criptomonedas. Esto implicaría que, por un lado, habría oferentes de bienes y servicios (que, en países donde hay menor libertad económica, esto implicará una solución a los problemas del tipo de cambio de la moneda local, con respecto a la extranjera, y a su depreciación); y, por otro lado, existirían demandantes de dichos bienes y servicios. Así, las transacciones económicas entre los diferentes agentes permitirá que éstos mismos tengan mayor accesibilidad de criptomonedas al haber un mayor volumen de circulación.
 
-Este escenario provocaría que las personas ya no necesiten depender de las casas de cambio centralizadas (en especial, aquellas que son del tipo \textit{KYC}) para cambiar dinero \textit{fiat} por criptomonedas: recurrirían a los mismos agentes económicos de la nueva economía \textit{paralela}. Y no solamente eso, las personas dejarían de atesorar, únicamente, las criptomonedas o utilizarlas como un mero activo financiero para ganar más dinero \textit{fiat}: podrán ser utilizadas como dinero \textit{peer-to-peer} (tal y como se estableció en el \textit{white paper} de Bitcoin). Cabe mencionar que, de acuerdo con la teoría económica, esto también incrementaría su valor, siendo que aumentará, naturalmente, su \textit{utilidad} en el mercado. Si esta apreciación se traslada a su cotización, cada unidad de criptomoneda valdrá aún más (y el dinero \textit{fiat} quedará relegado al pago de impuestos).
+Este escenario provocaría que las personas ya no necesiten depender de las casas de cambio centralizadas (en especial, aquellas que son del tipo \textit{KYC}) para cambiar dinero \textit{fiat} por criptomonedas: recurrirían a los mismos agentes económicos de la nueva economía \textit{paralela}. Y no solamente eso, las personas dejarían de atesorar, únicamente, las criptomonedas o utilizarlas como un mero activo financiero para ganar más dinero \textit{fiat}: podrán ser utilizadas como dinero \textit{par-a-par} (tal y como se estableció en el \textit{white paper} de Bitcoin). Cabe mencionar que, de acuerdo con la teoría económica, esto también incrementaría su valor, siendo que aumentará, naturalmente, su \textit{utilidad} en el mercado. Si esta apreciación se traslada a su cotización, cada unidad de criptomoneda valdrá aún más (y el dinero \textit{fiat} quedará relegado al pago de impuestos).
 
 Esta práctica podría ser, además, trasladado a otras criptomonedas, provocando una competencia de criptomonedas. En otras palabras, la economía paralela podría no estar relegada a una única criptomoneda, sino a diferentes criptomonedas. La valuación de los diferentes bienes quedará sujeta a los agentes económicos, quienes decidirán con qué criptomoneda comprar o vender ciertos bienes (o todas ellas).
 
 \subsection{Mundial}
 En la sección anterior se mencionó un escenario \textit{local}; pero, siendo que las marcas de código abierto son libres, ésta será accesible a cualquier parte del mundo. La única barrera\footnote{Asumiendo que las personas tendrán acceso a internet.}, no obstante, que tendrá será la del idioma (y, por ende, la educación).
 
-Por ejemplo, un venezolando podría crear una marca de código abierto sobre una serie de recetas de comida, con un proceso de fabricación específica. Dado que no puede acceder a una cuenta bancaria, y no puede comprar criptomonedas con la moneda local debido a su extrema depreciación en el corto plazo, tal vez un uruguayo podría utilizar esta marca para vender su comida; y por cada venta, el venezolano recibirá una comisión, dado que ha provisto de su dirección en criptomoneda para cobrar por cada venta (aunque, esto dependerá del modelo de negocios que el venezolano elija ofrecer\footnote{Con respecto a esto, tiene que ver con respecto a si ofrece una marca en la que la persona que decide fabricar dicho producto, debe pagarle por cada venta; o simplemente realizar un único pago para obtener un «permiso» por parte del creador.}). Así, el venezolano podrá ganar dinero, al haber ofrecido una marca de código abierto, sin tener que recurrir a una cuenta bancaria y a una casa de cambio para obtener las criptomonedas. Y si este modelo se replica en la región donde vive el venezolano, los demás habitantes de esa zona podrán obtener el dinero suficiente como para que pueda circular localmente dicha criptomoneda.
+Por ejemplo, un venezolano podría crear una marca de código abierto sobre una serie de recetas de comida, con un proceso de fabricación específica. Dado que no puede acceder a una cuenta bancaria, y no puede comprar criptomonedas con la moneda local debido a su extrema depreciación en el corto plazo, tal vez un uruguayo podría utilizar esta marca para vender su comida; y por cada venta, el venezolano recibirá una comisión, dado que ha provisto de su dirección en criptomoneda para cobrar por cada venta (aunque, esto dependerá del modelo de negocios que el venezolano elija ofrecer\footnote{Con respecto a esto, tiene que ver con respecto a si ofrece una marca en la que la persona que decide fabricar dicho producto, debe pagarle por cada venta; o simplemente realizar un único pago para obtener un «permiso» por parte del creador.}). Así, el venezolano podrá ganar dinero, al haber ofrecido una marca de código abierto, sin tener que recurrir a una cuenta bancaria y a una casa de cambio para obtener las criptomonedas. Y si este modelo se replica en la región donde vive el venezolano, los demás habitantes de esa zona podrán obtener el dinero suficiente como para que pueda circular localmente dicha criptomoneda.
 
 Esto supone una ventaja más grande que la de, simplemente, emprender \textit{localmente}. Los creadores recibirán una mínima comisión por las ventas que sucedan en otras regiones o países; y el vendedor podrá obtener una ganancia por sus ventas (por eso, la importancia del incentivo económico). Si se desea implementar una criptomoneda en un país o región determinada, la comunidad podría incentivar al usuario que vive en dicha región para que cree una marca de código abierto\footnote{Solución más eficiente que, tan solo, pedir donaciones.}, y sea implementado en otras regiones y países (saltando todas las barreras financieras y controles estatales).
 

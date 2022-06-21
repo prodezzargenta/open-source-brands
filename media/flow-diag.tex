@@ -1,0 +1,59 @@
+\tikzstyle{block-w} = 
+	[rectangle, draw, fill=white, text centered, 
+	rounded corners, text width=6.0em, node distance=2cm]
+\tikzstyle{block-y} = 
+	[rectangle, draw, fill=yellow!75, text centered, 
+	rounded corners, text width=6.0em, node distance=2cm]
+\tikzstyle{block-g} = 
+	[rectangle, draw, fill=green!50, text centered, 
+	rounded corners, text width=6.0em, node distance=2cm]
+\tikzstyle{block-r} = 
+	[rectangle, draw, fill=red!50, text centered, 
+	rounded corners, text width=4.5em, node distance=2cm]
+\tikzstyle{if} = 
+	[diamond, draw, fill=orange!50, text centered, 
+	rounded corners, text width=2.5em, node distance=2cm, minimum height=2.5em]
+\tikzstyle{circle} = 
+	[ellipse, draw, fill=blue!25, text centered, 
+	node distance=2cm, minimum height=3em]  
+\tikzstyle{line} = [draw, -latex']
+
+\begin{tikzpicture}[node distance = 1.8cm, auto]
+	\node [block-w] (cliente) {Cliente};
+	\node [block-w, below of=cliente] (app) {Aplicación};
+	\node [circle, below of=app] (qr) {Código QR};
+	\node [block-w, below left of=qr] (inv) {Inventor};
+	\node [block-w, below right of=qr] (vend) {Vendedor};
+	\node [block-y, below of=vend] (gpg1) {$ GPG_{1} $};
+	\node [block-y, below of=inv] (gpg2) {$ GPG_{2} $};
+	\node [block-y, below of=gpg1] (dir1) {Dirección y porcentaje de comisión};
+	\node [block-y, below of=gpg2] (dir2) {Dirección y porcentaje de comisión};
+	\node [circle, below of=dir1] (comp) {Comprobación};
+	\node [if, below of=comp] (if) {Si};
+	\node [block-r, below left of=if] (not-ok) {Inválido};
+	\node [block-r, left=4em of not-ok] (error) {«Error»};
+	\node [block-g, below right of=if] (ok) {Válido};
+	\node [circle, below of=ok] (pago) {Pago};
+	\path [line] (cliente) -- (app);
+	\path [line] (app) -- (qr);
+	\path [line] (qr) -- (inv.north);
+	\path [line] (qr) -- (vend.north);
+	\path [line] (vend) -- (gpg1);
+	\path [line] (inv) -- (gpg2);
+	\path [line] (gpg1) -- (dir1);
+	\path [line] (gpg2) -- (dir2);
+	\path [line] (dir1) -- (comp);
+	\path [line] (dir2) |- (comp);
+	\path [line] (comp) -- (if);
+	\path [line] (if) -- (ok);
+	\path [line] (if) -- (not-ok);
+	\path [line] (not-ok) -- (error);
+	\path [line, dashed] (error) |- (app.west);
+	\path [line] (ok) -- (pago);
+	
+\end{tikzpicture}
+	
+	
+	
+	
+	
