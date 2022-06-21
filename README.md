@@ -29,10 +29,10 @@ BTC | 1HWhyfsNXcbFoqHspHLSQv3hpUuu2WR2Bn
 Archivo | SHA-256
 --- | --- 
 osbbiblio.bib | df8b34c2d0aa3b78d5e4b7dfc75a0b14710a3d72f1860fbca31b8f1b90c48917
-osb.tex | c09401f4405d8619e475973b67e514eb0b635229028999a1b4332ff2cd351158
-osb.pdf | 27cb82bbd129b0f78edcaf8467c099d1266c119dc8edc2a31e149b46cf3475e4
+osb.tex | dfc3af9bdff44a51e2d59efa94b17502f69c9c2dcda480abf1ebd1129d45fd4d
+osb.pdf | 00edfef8c69dbd11dd6adeb401a3101cd222b3505aa52743e40f831fef793e21
 media/flow-diag.tex | 801b3f744d1232b6e9768728c16a22eae7111a73024a849ca8d7b8d441b6ff2b
 media/qr-code-es.pdf | b67435dca3deca79d8e030ee3863b8f515a69dcab7e1623a70699e579795faa7
 media/qr-code2-es.pdf | 5578d984877fa231ed9f1d58e75ae38c3a3a1e7c84ce440a67b65169b811b39a
-utils/hashes.txt | 2cc110594f3ea2b93b400a843364d56f05d56eb15248d4ec624788192e1e5840
+utils/hashes.txt | 6b01cd1a4321de67e383ed3040f2fa9492c83a647e31d9b949eb3053c0ddd47a
 utils/pubkey/prodezzargenta.asc | 266a13181eb0bca30426cf376df68dfb1663ff35b6d9b4b88f43f1f202c5ab8e
